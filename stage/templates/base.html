@@ -1,0 +1,56 @@
+{% load static from staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock title %}</title>
+    {% block css %}<link rel="stylesheet" href={% static "events.css" %}>{% endblock css %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="nav">
+			<div class="container">
+  			<ul>
+  				<li {% if '/concerts' in request.path %} class="on"{% endif %}><a href={% url 'concerts' %}>Concerts</a></li>
+  				<li {% if '/theatre' in request.path %} class="on"{% endif %}><a href={% url 'theatre' %}>Theatre</a></li>
+  				<li {% if '/circus' in request.path %} class="on"{% endif %}><a href={% url 'circus' %}>For kids</a></li>
+  				<li><a href={% url 'contact' %}>Contact</a></li>
+                <li><a href={% url 'index' %}>Home</a></li>
+                <li id="all" {% if request.path == '/events/' %} class="on"{% endif %}><a href={% url 'events' %}>All Events</a></li>
+                {% block date %}
+                <li id="date">
+                    <form action="{% url "events" %}" method="get">
+                    {{ form }}
+                    <input id="select" type="Submit" value="Select" />
+                    </form>
+                </li>
+                {% endblock date %}
+  			</ul>
+  		    </div>
+    </div>
+    <div class="line"></div>
+    <div class="main">
+        <div class="container">
+            {% block message %}{% endblock message %}
+            {% block content %}
+            <table class="table">
+                {% for event in events %}
+                   <td>
+                       <a href={% url 'info' event.artist_name %}><img src="{{ event.poster.url }}" height="333" width="236"/>
+                            <p id="info">{{ event.artist_name }}<br>{{ event.event_place }}
+                                <br>{{ event.event_date }} {{ event.event_time }}
+                            </p>
+                       </a>
+                   </td>
+                   {% if forloop.counter|divisibleby:4 and not forloop.last %}<tr></tr>{% endif %}
+                {% endfor %}
+           </table>
+           {% endblock content %}
+        </div>
+    </div>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+</body>
+</html>

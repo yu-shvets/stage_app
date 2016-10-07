@@ -1,0 +1,4 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+{% block title %}Events{% endblock title %}
+{% block message %}<p>{{ request.GET.mail_message }}</p>{% endblock message %}

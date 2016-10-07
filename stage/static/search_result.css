@@ -1,0 +1,95 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	background-color: #117bff;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+	margin: 0 auto;
+	padding: 0 10px;
+}
+
+.nav {
+	background: #000;
+	height: 80px;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.nav ul {
+	height: 80px;
+	list-style: none;
+	margin: 0 auto;
+	padding: 0;
+}
+
+.nav ul li {
+	color: #fff;
+	display: inline-block;
+	height: 80px;
+	line-height: 80px;
+	list-style: none;
+	padding: 0 10px;
+	transition: background .5s;
+    font-weight: lighter;
+	font-size: 16px;
+}
+
+.nav ul li a {
+	text-decoration: none;
+	color: #fff;
+	display: block;
+}
+
+.nav ul li:hover {
+	background: #117bff;
+	cursor: pointer;
+	transition: background .5s;
+}
+
+.on {
+	background: #117bff;
+}
+
+#all {
+	float: right;
+}
+
+.line {
+	background: white;
+	height: 7px;
+	width: 100%;
+}
+
+.main {
+	background: #117bff;
+}
+
+.table {
+    margin-top: 30px;
+}
+
+.main img {
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.main h2 {
+    color: white;
+}
+
+.main p {
+	font-weight: lighter;
+	color: white;
+	font-size: 22px;
+    margin-bottom: 30px;
+}
+
+.main h3 {
+    color: white;
+}
+

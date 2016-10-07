@@ -1,0 +1,50 @@
+{% load static from staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stage | Concert agency</title>
+    <link rel="stylesheet" href={% static "style.css" %}>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+          <h1>STAGE</h1>
+          <p>Concert agency</p>
+          <a class="btn" href={% url 'events' %}>Events</a>
+        </div>
+    </div>
+    <div id="search"></div>
+    <div class="main">
+			<div class="container">
+				<img src="static/tom.gif" height="128" width="196">
+				<h2>Tickets for all kinds of events at best prices</h2>
+  			      <p>Go down the disco! Hang the blessed DJ!
+                    <form method="get" action=/search/#search>
+                        <input type="search" name="q" placeholder="Please, enter event" value="" />
+                        <input type="Submit" value="Search" class="b" />
+                        <span>{{ request.GET.search_message }}</span>
+                    </form>
+                  </p>
+            </div>
+    </div>
+    <div id="mail" class="jumbotron">
+			<div class="container">
+				<h2>Stay Connected</h2>
+				<p>Receive weekly flyers for upcoming shows</p>
+                      <form method="post" action=/#mail>
+                          {% csrf_token %}
+                          <input type="Submit" value="Get it" />
+                          <input type="search" name="email" placeholder="Email" value="" />
+                          <span>{{ request.GET.mail_message }}</span>
+                    </form>
+			</div>
+    </div>
+    <div class="footer">
+			<div class="container">
+				<p>&copy; Stage Concert Agency</p>
+			</div>
+		</div>
+</body>
+</html>

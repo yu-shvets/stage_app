@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+{% block css %}<link rel="stylesheet" href={% static "info.css" %}>{% endblock css %}
+{% block date %}{% endblock date %}
+{%  block content %}
+<table class="table">
+    <td><img src="{{ events.poster.url }}" height="333" width="236"/></td>
+    <td>
+        <h2>{{ events.artist_name }}</h2>
+        <h3>{{ events.event_name }}</h3>
+        <p>{{ events.notes }}</p>
+        <h3>{{ events.event_date }} {{ events.event_place }} {{ events.event_time }}</h3>
+        <p>Price: {{ events.price }}</p>
+        <a href="#" class="b">Buy</a>
+    </td>
+</table>
+{% endblock content %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+{% block css %}<link rel="stylesheet" href={% static "search_result.css" %}>{% endblock css %}
+{% block date %}{% endblock date %}
+{%  block content %}
+{% if events %}
+    <p>You searched for: {{ query }}</p>
+    <table class="table">
+{% for event in events %}
+    <tr>
+        <td><img src="{{ event.poster.url }}" height="333" width="236"/></td>
+        <td>
+            <h2>{{ event.artist_name }}</h2>
+            <h3>{{ event.event_name }}</h3>
+            <p>{{ event.notes }}</p>
+            <h3>{{ event.event_date }} {{ event.event_place }} {{ event.event_time }}</h3>
+            <p>Price: {{ event.price }}</p>
+            <a href="#" class="btn btn-default btn-lg" role="button">Buy</a>
+        </td>
+    </tr>
+{% endfor %}
+    </table>
+{% else %}
+    <p>No items found for: {{ query }}</p>
+{% endif %}
+{% endblock content %}

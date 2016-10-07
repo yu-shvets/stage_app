@@ -1,0 +1,193 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+	margin: 0 auto;
+	max-width: 940px;
+	padding: 0 10px;
+}
+
+.header {
+  background-image: url(hall.jpg);
+  background-size: cover;
+  height: 800px;
+  text-align: center;
+}
+
+.header .container {
+	position: relative;
+	top: 200px;
+}
+
+.header h1 {
+	color: #fff;
+	line-height: 100px;
+	margin-top: 0;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+	font-weight: lighter;
+    letter-spacing: 7px;
+}
+
+@media (min-width:850px) {
+	.header h1 {
+		font-size: 100px;
+	}
+}
+
+.header p {
+	color: #fff;
+	font-weight: 500;
+	letter-spacing: 8px;
+	margin-bottom: 70px;
+	margin-top: 0;
+	text-transform: uppercase;
+}
+
+.btn {
+    color: #fff;
+    background: #000;
+    padding: 10px 40px;
+    text-decoration: none;
+    transition: background .5s;
+	text-transform: uppercase;
+    font-size: 15px;
+    font-weight: lighter;
+    letter-spacing: 3px;
+}
+
+.nav {
+	background: #000;
+	height: 80px;
+	width: 100%;
+}
+
+.nav ul {
+	height: 80px;
+	list-style: none;
+	margin: 0 auto;
+	padding: 0;
+}
+
+.nav ul li {
+	color: #fff;
+	display: inline-block;
+	height: 80px;
+	line-height: 80px;
+	list-style: none;
+	padding: 0 10px;
+	transition: background .5s;
+}
+
+.btn:hover, .nav ul li:hover {
+	background: #117bff;
+	cursor: pointer;
+	transition: background .5s;
+}
+
+.main .container {
+	margin: 100px auto;
+    margin-bottom: 100px;
+}
+
+.main h2 {
+    font-weight: lighter;
+    text-transform: uppercase;
+}
+
+.main p {
+    margin-top: -10px;
+	margin-bottom: 50px;
+    font-weight: lighter;
+    text-transform: uppercase;
+}
+
+.main img {
+	float: left;
+	margin: 0 80px 80px 0;
+}
+
+.main input{
+    font-size: 20px;
+}
+
+.main span {
+	margin-top: 50px;
+}
+
+.jumbotron {
+	background: url(stage.jpg) center center;
+	background-size: cover;
+	height: 600px;
+}
+
+.jumbotron .container {
+	position: relative;
+	top: 220px;
+}
+
+.jumbotron h2 {
+	color: #fff;
+	text-align: right;
+    font-weight: lighter;
+    text-transform: uppercase;
+}
+
+.jumbotron p {
+    margin-top: -10px;
+    margin-bottom: 50px;
+	color: #fff;
+	text-align: right;
+    text-transform: uppercase;
+    font-weight: lighter
+}
+
+.jumbotron input {
+    font-size: 20px;
+    float: right;
+}
+
+.jumbotron span {
+	color: white;
+	float: right;
+	margin-right: 10px;
+	margin-top: 5px;
+}
+
+.footer {
+	background: #000;
+	height: 80px;
+    width: 100%;
+}
+
+.footer p {
+	color: #fff;
+	font-size: 14px;
+	height: 80px;
+	line-height: 80px;
+	margin: 0;
+    text-transform: uppercase;
+    font-weight: lighter;
+}
+
+@media (max-width: 500px) {
+  .header h1 {
+    font-size: 50px;
+    line-height: 64px;
+  }
+
+  .main, .jumbotron {
+    padding: 0 30px;
+  }
+
+  .main img {
+    width: 100%;
+  }
+}
+
